@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #video-container {
+      border-radius: 70px;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="envelope-wrapper">
+      <div class="envelope">
+        <div class="letter">
+          <div class="text">
+            <strong>Thân gửi Huyen .</strong>
+            <p>
+              Chúc bạn có một buổi sớm 9/3 thật nà hạnh phúc , vui vẻ bên những người mình yêu thương.🤗
+              Dẫu sấm không vang dội , dù mưa chẳng tuôn rơi
+              Chỉ cần người ở đó , thì tôi sẽ chẳng rời
+            </p>
+            <strong>trung mau lanh </strong>
+          </div>
+        </div>
+      </div>
+      <div class="heart"></div>
+    </div>
+  </div>
+  <script>
+    const envelope = document.querySelector('.envelope-wrapper');
+    envelope.addEventListener('click', () => {
+      envelope.classList.toggle('flap');
+    });
+  </script>
+  <div id="containerx">
+    <h1 id="the-h1" class="animated-text animated-text2">smiles</h1>
+  </div>
+  <div id="video-container">
+    <video id="video" width="720" height="560" autoplay muted></video>
+  </div>
+  <div id="progressBar"></div>
+</body>
+
+</html>
