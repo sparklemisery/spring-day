@@ -1,3 +1,8 @@
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => video.srcObject = stream)
+  .catch(err => console.error(err));
+
+
 document.addEventListener('DOMContentLoaded', async function () {
   const video = document.getElementById('video');
   const progressBar = document.getElementById('progressBar');
@@ -7,16 +12,14 @@ document.addEventListener('DOMContentLoaded', async function () {
   var dk = true;
   // Load face-api models
   await Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('https://sparklemisery.github.io/spring-day/models')
   ]);
 
+
   // Start video
-  navigator.mediaDevices.getUserMedia({ video: {} })
-    .then(stream => video.srcObject = stream)
-    .catch(err => console.error(err));
 
   // Function to update progress bar based on detected expression
   function updateProgressBar(expression) {
