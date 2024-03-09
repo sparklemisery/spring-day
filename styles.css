@@ -39,6 +39,10 @@ body.pink-bg {
     }
 }
 
+.audio-1 {
+    display: none;
+}
+
 .animated-text2 {
     font-size: 36px;
     font-weight: bold;
