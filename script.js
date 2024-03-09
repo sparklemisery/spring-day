@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   var dk = true;
   // Load face-api models
   await Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
-    faceapi.nets.faceRecognitionNet.loadFromUri('https://sparklemisery.github.io/spring-day/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('https://sparklemisery.github.io/spring-day/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('https://sparklemisery.github.io/spring-day/models/tiny_face_detector_model-weights_manifest.json'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('https://sparklemisery.github.io/spring-day/models/face_landmark_68_model-weights_manifest.json'),
+    faceapi.nets.faceExpressionNet.loadFromUri('https://sparklemisery.github.io/spring-day/models/face_expression_model-weights_manifest.json')
   ]);
 
 
